@@ -12,5 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .backbone import *
 from .losses import *
-from .psanet import PSANet
+
+from .mscale_ocrnet import mscale_OCRNet
