@@ -15,4 +15,4 @@
 from .backbone import *
 from .losses import *
 
-from .mscale_ocrnet import mscale_OCRNet
+from .mscale_ocrnet import MscaleOCRNet
