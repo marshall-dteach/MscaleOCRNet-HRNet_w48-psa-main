@@ -18,7 +18,7 @@
 
 |     模型名称     |               数据集               | 论文精度（miou） |                       复现精度（miou）                       |                          预训练模型                          | log                                                          |
 | :--------------: | :--------------------------------: | :--------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
-| OCRNet-HRNet+psa | Cityscapes(train+val训练，val验证) |       86.7       | [87.15](https://pan.baidu.com/s/1EIHDbtIjx76h9-RI_WZxhg?pwd=CAVS) | [Mappilary训练200个epoch](https://pan.baidu.com/s/1AcD7C7uTYW01AUNtMjTDsQ?pwd=CAVS) | [train.log](https://pan.baidu.com/s/1FRGwb43qouaUe2JpOtsecg?pwd=CAVS) |
+| OCRNet-HRNet+psa | Cityscapes(train+val训练，val验证) |       86.7       | [87.15](https://pan.baidu.com/s/1EIHDbtIjx76h9-RI_WZxhg?pwd=CAVS) | [Mappilary训练200个epoch](https://pan.baidu.com/s/1AcD7C7uTYW01AUNtMjTDsQ?pwd=CAVS) | [train.log](https://raw.githubusercontent.com/marshall-dteach/psanet-main/main/log/trainer-0.log) |
 
 
 
