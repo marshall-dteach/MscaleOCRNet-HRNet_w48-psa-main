@@ -2,7 +2,7 @@
 
 # 基于Paddle复现
 
-## 1. 论文简介 
+## 1. 论文简介
 
 论文名称：[Polarized Self-Attention: Towards High-quality Pixel-wise Regression](https://arxiv.org/pdf/2107.00782.pdf)
 
@@ -24,13 +24,15 @@
 
 通过以下命令安装所需要的环境
 
-!pip install -r PaddleSeg/requirements.txt
+~~~shell
+pip install -r requirements.txt
+~~~
 
 ## 4.数据集介绍
 
 Cityscapes数据集，下载地址为[Cityscapes Dataset – Semantic Understanding of Urban Street Scenes (cityscapes-dataset.com)](https://www.cityscapes-dataset.com/)
 
-数据集格式    
+数据集格式  
 
 ```css
 .
@@ -40,7 +42,7 @@ Cityscapes数据集，下载地址为[Cityscapes Dataset – Semantic Understand
 	│		└── acchen
 	│	└── val
 	│		└── acchen
-    └── gtFine 
+    └── gtFine
         ├── train
         ├── val
 ```
@@ -55,9 +57,12 @@ git clone https://github.com/marshall-dteach/PSA.git
 ### 训练模型
 
   ~~~shell
-python train.py --config configs/psanet/psa_cityscapes_1024x2048_520k.yml \
+python train.py \
+--config configs/psanet/psa_hrnetv2_psa_cityscapes_1024x2048_150k.yml \
+--do_eval
+
 python -m paddle.distributed.launch train.py \
-		--config configs/psa/psa_cityscapes_1024x2048_520k.yml \
+		--config configs/psanet/psa_hrnetv2_psa_cityscapes_1024x2048_150k.yml \
   ~~~
   ### 验证模型
 
@@ -70,7 +75,7 @@ python val.py \
 
 ~~~shell
 python3 export.py \
---config ./test_tipc/configs/psanet/psa_hrnetv2_psa_cityscapes_1024x2048_150k.yml \ 
+--config ./test_tipc/configs/psanet/psa_hrnetv2_psa_cityscapes_1024x2048_150k.yml \
 --model_path=./test_tipc/output/psaet/norm_gpus_0_autocast_null/best_model.pdparams\ ---save_dir=./test_tipc/output/PSANet/norm_gpus_0_autocast_null\
 ~~~
 
@@ -85,19 +90,19 @@ bash test_tipc/test_train_inference_python.sh ./test_tipc/configs/psanet/train_i
 
 ### 动态推理图
 
-比较模型预测与ground truth    
+比较模型预测与ground truth  
 ![1](https://user-images.githubusercontent.com/63546191/169755335-068bbf51-25c2-4bc3-a589-adcc5c2261eb.png)  
-![2](https://user-images.githubusercontent.com/63546191/169755356-e49bd5d2-b293-467f-8822-c40e959536e7.png)    
-![3](https://user-images.githubusercontent.com/63546191/169755371-fe093a13-7115-4b86-9faf-1104c8c4c8b0.png)   
-![4](https://user-images.githubusercontent.com/63546191/169755407-3fb01395-ec1d-4398-bfc8-20d42ce3950b.png)      
-![5](https://user-images.githubusercontent.com/63546191/169755436-936867a7-d53f-4588-9b48-72fff455dc70.png)     
-![6](https://user-images.githubusercontent.com/63546191/169755571-93992eb7-2a6e-4e3f-aa5f-10105d45f505.png)   
+![2](https://user-images.githubusercontent.com/63546191/169755356-e49bd5d2-b293-467f-8822-c40e959536e7.png)  
+![3](https://user-images.githubusercontent.com/63546191/169755371-fe093a13-7115-4b86-9faf-1104c8c4c8b0.png)  
+![4](https://user-images.githubusercontent.com/63546191/169755407-3fb01395-ec1d-4398-bfc8-20d42ce3950b.png)  
+![5](https://user-images.githubusercontent.com/63546191/169755436-936867a7-d53f-4588-9b48-72fff455dc70.png)  
+![6](https://user-images.githubusercontent.com/63546191/169755571-93992eb7-2a6e-4e3f-aa5f-10105d45f505.png)  
 
 ### 6. 代码详细结构说明
 
 ~~~shell
 PaddleSeg
-├── configs         # My model configuration stays here.            
+├── configs         # My model configuration stays here.  
 ├── test_tipc       # test_tipc stays here.
 ├── deploy          # deploy related doc and script.
 ├── paddlelseg  
