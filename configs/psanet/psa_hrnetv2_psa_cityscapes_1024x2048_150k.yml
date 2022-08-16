@@ -42,6 +42,7 @@ model:
     num_classes: 19
     backbone: 
       type: HRNETV2_PSA
+      need_recompute: True
     pretrained: pretrained/pretrained.pdparams
 
 optimizer:
