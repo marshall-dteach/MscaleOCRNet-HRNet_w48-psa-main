@@ -45,10 +45,16 @@ class Cityscapes(Dataset):
         dataset_root (str): Cityscapes dataset directory.
         mode (str, optional): Which part of dataset to use. it is one of ('train', 'val', 'test'). Default: 'train'.
         edge (bool, optional): Whether to compute edge while training. Default: False
+        add_val (bool, optional): Whether to use val set while training. Default: False
     """
     NUM_CLASSES = 19
 
-    def __init__(self, transforms, dataset_root, mode='train', edge=False):
+    def __init__(self,
+                 transforms,
+                 dataset_root,
+                 mode='train',
+                 edge=False,
+                 add_val=False):
         self.dataset_root = dataset_root
         self.transforms = Compose(transforms)
         self.file_list = list()
@@ -81,6 +87,18 @@ class Cityscapes(Dataset):
                              '*_gtFine_labelTrainIds.png')))
         img_files = sorted(
             glob.glob(os.path.join(img_dir, mode, '*', '*_leftImg8bit.png')))
+
+        if mode == 'train' and add_val:
+            label_files.extend(
+                sorted(
+                    glob.glob(
+                        os.path.join(label_dir, 'val', '*',
+                                     '*_gtFine_labelTrainIds.png'))))
+            img_files.extend(
+                sorted(
+                    glob.glob(
+                        os.path.join(img_dir, 'val', '*',
+                                     '*_leftImg8bit.png'))))
 
         self.file_list = [
             [img_path, label_path]
