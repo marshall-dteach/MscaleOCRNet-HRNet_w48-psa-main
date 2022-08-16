@@ -56,7 +56,7 @@ Cityscapes数据集，下载地址为[Cityscapes Dataset – Semantic Understand
 
 ~~~shell
 git clone https://github.com/marshall-dteach/psanet-main.git
-cd psanet-main-main
+cd psanet-main
 ~~~
 ### 安装第三方库
 
