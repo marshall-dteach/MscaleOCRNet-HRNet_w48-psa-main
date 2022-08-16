@@ -698,8 +698,6 @@ def HRNETV2_PSA(cfg_dic={
             'FUSE_METHOD': 'SUM'
         }
 },
-                pretrained=None,
-                need_recompute=False):
-    model = HighResolutionNet(
-        cfg_dic=cfg_dic, pretrained=pretrained, need_recompute=False)
+                **args):
+    model = HighResolutionNet(cfg_dic=cfg_dic, **args)
     return model
