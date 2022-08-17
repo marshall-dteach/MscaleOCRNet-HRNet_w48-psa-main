@@ -20,8 +20,8 @@
 | :--------------: | :--------------------------------: | :--------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
 | OCRNet-HRNet+psa | Cityscapes(train+val训练，val验证) |       86.7       | [87.15](https://pan.baidu.com/s/1EIHDbtIjx76h9-RI_WZxhg?pwd=CAVS) | [Mappilary训练200个epoch](https://pan.baidu.com/s/1AcD7C7uTYW01AUNtMjTDsQ?pwd=CAVS) | [train.log](https://raw.githubusercontent.com/marshall-dteach/psanet-main/main/log/trainer-0.txt) |
 
-- 本论文是基于NVIDIA的OCRNet_msacle-HRNetV2_W48模型，[预训练模型](https://drive.google.com/open?id=1fs-uLzXvmsISbS635eRZCc5uzQdBIZ_U)同样来源于OCRNet_msacle-HRNetV2_W48模型的预训练模型——在Mappilary数据集上训练200个epoch得到的模型，并将Pytorch的.pth文件转化为Paddle的.pdparams文件，训练时放置的位置见第6部分代码详细结构说明。
-
+- 本论文是基于NVIDIA的OCRNet_msacle-HRNetV2_W48模型，[预训练模型](https://drive.google.com/open?id=1fs-uLzXvmsISbS635eRZCc5uzQdBIZ_U)同样来源于OCRNet_msacle-HRNetV2_W48模型的预训练模型——在Mappilary数据集上训练200个epoch得到的模型，并将Pytorch的.pth文件转化为Paddle的.pdparams文件
+- 上面表格中预训练模型给到的链接是我**已经处理好的预训练文件pretrained.pdparams**，下载以后放到的位置见第6部分代码详细结构说明
 - 精度和loss可以在train.log中看到训练的详细过程
 
 
@@ -108,7 +108,7 @@ PaddleSeg
 ├── paddlelseg  
 │   ├── core        # the core training, val and test file.
 │   ├── datasets  
-│   ├── models  
+│   ├── models      # my model is here
 │   ├── transforms  # the online data transforms
 │   └── utils       # all kinds of utility files
 ├── pretrained
