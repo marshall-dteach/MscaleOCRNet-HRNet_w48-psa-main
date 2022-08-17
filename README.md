@@ -20,7 +20,7 @@
 | :--------------: | :--------------------------------: | :--------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | ------------------------------------------------------------ |
 | OCRNet-HRNet+psa | Cityscapes(train+val训练，val验证) |       86.7       | [87.15](https://pan.baidu.com/s/1EIHDbtIjx76h9-RI_WZxhg?pwd=CAVS) | [Mappilary训练200个epoch](https://pan.baidu.com/s/1AcD7C7uTYW01AUNtMjTDsQ?pwd=CAVS) | [train.log](https://raw.githubusercontent.com/marshall-dteach/psanet-main/main/log/trainer-0.txt) |
 
-- 本论文是基于NVIDIA的OCRNet_msacle-HRNetV2_W48模型，[预训练模型](https://drive.google.com/open?id=1fs-uLzXvmsISbS635eRZCc5uzQdBIZ_U)同样来源于OCRNet_msacle-HRNetV2_W48模型的预训练模型——在Mappilary数据集上训练200个epoch得到的模型，并将Pytorch的.pth文件转化为Paddle的.pdparams文件，训练时放置的位置见[第6部分代码详细结构说明](#  6. 代码详细结构说明)。
+- 本论文是基于NVIDIA的OCRNet_msacle-HRNetV2_W48模型，[预训练模型](https://drive.google.com/open?id=1fs-uLzXvmsISbS635eRZCc5uzQdBIZ_U)同样来源于OCRNet_msacle-HRNetV2_W48模型的预训练模型——在Mappilary数据集上训练200个epoch得到的模型，并将Pytorch的.pth文件转化为Paddle的.pdparams文件，训练时放置的位置见第6部分代码详细结构说明。
 
 - 精度和loss可以在train.log中看到训练的详细过程
 
@@ -34,9 +34,9 @@
 
 ## 4.数据集介绍
 
-- [Cityscapes数据集](https://www.cityscapes-dataset.com/)拥有5000张在城市环境中驾驶场景的图像（2975train，500 val,1525test）。它具有19个类别的密集像素标注（97％coverage），其中8个具有实例级分割。Cityscapes数据集，即城市景观数据集，这是一个新的大规模数据集，其中包含一组不同的立体视频序列，记录在50个不同城市的街道场景。城市景观数据集中于对城市街道场景的语义理解图片数据集，该大型数据集包含来自50个不同城市的街道场景中记录的多种立体视频序列，除了20000个弱注释帧以外，还包含5000帧高质量像素级注释。因此，数据集的数量级要比以前的数据集大的多。Cityscapes数据集共有fine和coarse两套评测标准，前者提供5000张精细标注的图像，后者提供5000张精细标注外加20000张粗糙标注的图。Cityscapes数据集包含2975张图片。包含了街景图片和对应的标签。大小为113MB。Cityscapes数据集，包含戴姆勒在内的三家德国单位联合提供，包含50多个城市的立体视觉数据。
+- [Cityscapes数据集](https://www.cityscapes-dataset.com/)拥有5000张在城市环境中驾驶场景的图像，它具有19个类别的密集像素标注（97％coverage），其中8个具有实例级分割，一共包含5000张图片，训练集、验证集和测试集分别有2975、500和1525张图片。
 
-- 运行代码时数据集放置的位置，[第6部分代码详细结构说明](#  6. 代码详细结构说明)。
+- 运行代码时数据集放置的位置及结构，见第6部分代码详细结构说明。
 
 
 ## 5. 快速开始
