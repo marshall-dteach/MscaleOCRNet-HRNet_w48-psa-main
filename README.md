@@ -8,7 +8,7 @@
 
 ![Polarized Self-Attention](README.assets/psanet相关图片.png)
 
-作者基于OCRNet_msacle-HRNetV2_W48设计了一种新的通道注意力和空间注意力模块，并应用于HRNet的Basic模块上，使得结果在Cityscapes验证集上达到了SOTA精度。
+作者基于OCRNet_msacle-HRNetV2_W48设计了两种新的通道注意力和空间注意力模块：顺序模块和并行模块，并应用于HRNet的Basic模块上，使得结果在Cityscapes验证集上达到了SOTA精度，miou精度分别达到了86.7和86.9。本项目使用Paddle复现了并行模块，并且在Cityscapes val set上达到了miou=87.15的精度。
 
 ## 2.复现精度
 
